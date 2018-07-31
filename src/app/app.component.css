@@ -1,0 +1,8 @@
+.register label{
+    display: inline-block;
+		text-align: right;
+		float: center;
+}
+input{
+    padding: 16px;
+}
