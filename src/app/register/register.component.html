@@ -1,0 +1,75 @@
+<div style="text-align:center">
+ 
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <form [formGroup]="loginform">
+    <div>
+     
+  
+      <label>
+        First Name:
+        <input type="text" formControlName="firstname" >
+        <span *ngIf="!loginform.controls['firstname'].valid">*</span>
+      </label>
+      
+      <label>
+        Last Name:
+        <input type="text" formControlName="lastname" > 
+        <span *ngIf="!loginform.controls['lastname'].valid">*</span>
+      </label>
+  
+  
+    </div>
+    <br />
+    <div>
+      <label>
+        Email:
+        <input type="email" formControlName="email">
+        <span *ngIf="!loginform.controls['email'].valid">*</span>
+      </label>
+  
+      <label>
+        Contact no.:
+        <input type="text" formControlName="number" >
+        <span *ngIf= "!loginform.controls['number'].valid">*</span>
+      </label>
+    </div>
+    <br />
+    <div>
+  
+      <label>
+        Password:
+        <input type="password" formControlName="pass" >
+        <span *ngIf="!loginform.controls['pass'].valid">*</span>
+      </label>
+  
+  
+      <label>
+        Confirm Password:
+        <input type="password" formControlName="passcon">
+        <span *ngIf="!loginform.controls['passcon'].valid" onkeyup="pass()">*</span>
+      </label>
+  
+  
+    </div>
+    <br />
+    <div>
+      <label>
+        Empid:
+        <input type="text" formControlName="empid" required>
+        <span *ngIf="!loginform.controls['empid'].valid">*</span>
+      </label>
+       <label>
+         Gender:
+        <input type="text" formControlName="gen" required>
+        <span *ngIf="!loginform.controls['gen'].valid">*</span>
+      </label>
+    </div>
+    <br />
+    <div>
+      <button type="submit" [disabled]="!loginform.valid" (click)="store()" >Submit</button>
+    </div>
+  
+  </form>
+  </div>
